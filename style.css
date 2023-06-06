@@ -1,0 +1,125 @@
+body {
+    text-align: center;
+}
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.top-container h1 {
+    font-size: 7em;
+    margin: 0;
+}
+
+.top-container h3 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.container {
+    margin: 50px;
+    display: grid;
+    width: 304px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2px;
+    background-color: black;
+}
+
+.player-container {
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.player-container.hover {
+    border: 1px solid black;
+    transform: scale(1.2);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+
+.controls {
+    width: 400px;
+    margin: auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.input-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border: none;
+    margin: 0;
+    text-align: center;
+    font-size: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 40px;
+}
+
+button {
+    width: 100px;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    box-shadow: 0px 0px 3px;
+    transform: scale(1.2);
+    background-color: darkgray;
+    cursor: pointer;
+}
+
+#result h1 {
+    font-size: 5em;
+    color: white;
+}
+
+#result {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0s;
+    transition: opacity 1s;
+    width: 100vw;
+    background-color: rgba(20, 20, 20, 1);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#result.active {
+    opacity: 1;
+    transform: translateY(330%);
+}
+
+#line {
+    background-color: black;
+    width: 6px;
+    height: 300px;
+    position: absolute;
+    top: -100px;
+    left: -100px;
+}
