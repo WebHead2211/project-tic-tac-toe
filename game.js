@@ -58,20 +58,14 @@ const GameControl = (() => {
         else {
             if ((gameOver && document.querySelector('#player1').value !== '' && document.querySelector('#player2').value !== '') || !gameOver) {
                 {
-
-                    if(AiControl.aiMode == 1){
-
-                    } else {      
-                        players = [Player(document.querySelector('#player1').value, 'X'), Player(document.querySelector('#player2').value, 'O')];
-                        reset()
-                        document.querySelector('#player1').value = players[0].name;
-                        document.querySelector('#player2').value = players[1].name;
-                        DisplayControl.playerHover(0, false);
-                        DisplayControl.setPlayer(players);
-                        gameOver = false;
-                        Gameboard.render();
-                    }
-
+                    players = [Player(document.querySelector('#player1').value, 'X'), Player(document.querySelector('#player2').value, 'O')];
+                    reset()
+                    document.querySelector('#player1').value = players[0].name;
+                    document.querySelector('#player2').value = players[1].name;
+                    DisplayControl.playerHover(0, false);
+                    DisplayControl.setPlayer(players);
+                    gameOver = false;
+                    Gameboard.render();
                 }
             }
             else if (gameOver) {
@@ -255,15 +249,6 @@ const Player = (name, sign) => {
         sign
     };
 };
-
-
-const AiControl = (() => {
-    let aiMode;
-
-    return {
-        aiMode
-    }
-})();
 
 
 Gameboard.render();
