@@ -1,5 +1,13 @@
 body {
     text-align: center;
+    background-color: rgb(156, 156, 156);
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 0;
+    font-weight: 600px;
 }
 
 .top-container {
@@ -7,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 100px;
+    margin-bottom: 20px;
 }
 
 .top-container h1 {
@@ -44,17 +53,23 @@ body {
 
 .controls {
     width: 400px;
-    margin: auto;
+    margin: 70px auto 0;
     gap: 20px;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    border: 3px solid black;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+    background-color: rgb(235, 235, 235);
 }
 
-.input-container {
+form {
     display: flex;
     gap: 20px;
 }
+
 
 .button-container {
     display: flex;
@@ -62,7 +77,7 @@ body {
 }
 
 .box {
-    background-color: white;
+    background-color: rgb(156, 156, 156);
     width: 100px;
     height: 100px;
     border: none;
@@ -74,23 +89,56 @@ body {
     align-items: center;
 }
 
-input {
+/* input {
     height: 40px;
+} */
+
+.player {
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(156, 156, 156);
+    padding-left: 10px;
+    transition: 0.4s ease;
+}
+
+.player::placeholder {
+    color: rgb(114, 114, 114);
+    font-weight: 400;
+}
+
+.player:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px 0px #000000;
 }
 
 button {
     width: 100px;
     height: 60px;
     border: none;
-    border-radius: 12px;
-    transition: all 0.3s;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    background-color: rgb(156, 156, 156);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
-    box-shadow: 0px 0px 3px;
+    box-shadow: 0px 0px 3px 0px #000000;
     transform: scale(1.2);
-    background-color: darkgray;
     cursor: pointer;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: sans-serif;
+    transition: 0.4s;
+}
+
+h4.invisible {
+    transform: scale(0);
 }
 
 #result h1 {
@@ -112,7 +160,7 @@ button:hover {
 
 #result.active {
     opacity: 1;
-    transform: translateY(330%);
+    transform: translateY(505%);
 }
 
 #line {
@@ -120,6 +168,105 @@ button:hover {
     width: 6px;
     height: 300px;
     position: absolute;
-    top: -100px;
-    left: -100px;
+    top: -1000px;
+    left: -1000px;
 }
+
+.hidden {
+    display: none;
+}
+
+
+
+
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #000000;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #ffffff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input[disabled] + .slider {
+    background-color: rgba(78, 78, 78, 0.7);
+}
+
+input[disabled] + .slider:before {
+    background-color: rgba(204, 204, 204, 0.7);
+  }
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Sign container */
+
+.sign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+#player-choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.sign-container h4 {
+    margin: 0;
+}
+
+#sign-button {
+    margin: 0;
+}
+

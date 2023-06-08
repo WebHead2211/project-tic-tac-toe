@@ -1,41 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Tic Tac Toe</h1>
+    <div id="result">
+        <h1 id="resultText"></h1>
+    </div>
     <div class="top-container">
         <div class="player-container">
             <h1>X</h1>
             <h3 class="display-name">Player 1</h3>
-        </div>  
+        </div>
         <div class="container"></div>
         <div class="player-container">
             <h1>O</h1>
             <h3 class="display-name">Player 2</h3>
-        </div> 
+        </div>
     </div>
-    <div id="result"><h1 id="resultText"></h1></div>
     <div class="controls">
         <div class="input-container">
-            <input type="text" id="player1" placeholder="Player 1">
-            <input type="text" id="player2" placeholder="Player 2">
+            <form action="#" id="form">
+                <input class="player" type="text" id="player1" placeholder="Player 1" required>
+                <input class="player" type="text" id="player2" placeholder="Player 2" required>
+            </form>
         </div>
         <div class="button-container">
-            <button id="start-button">Start</button>
-            <button id="reset-button">Reset</button>
-            <button id="computer-button">Vs Computer</button>
+            <button type="submit" id="start-button" form="form">
+                <h4>Start</h4>
+            </button>
+            <button type="button" id="reset-button">
+                <h4>Reset</h4>
+            </button>
+            <!-- <label for="computer-button">Vs. Computer?</label>
+            <select name="computer" id="computer-button">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select> -->
+        </div>
+        <div class="computer-container">
+            <p class="input-title">Player vs Computer?</p>
+            <label class="switch" for="computer-button">
+                <input type="checkbox" id="computer-button"/>
+                <div class="slider round" id="computer-slider"></div>
+            </label>
+        </div>
+        <div class="sign-container">
+            <p class="input-title">Choose player sign</p>
+            <div id="player-choice">
+                <h4 class="invisible sign-title">X</h4>
+                <label class="switch" for="sign-button">
+                    <input type="checkbox" id="sign-button" disabled />
+                    <div class="slider round" id="sign-slider"></div>
+                </label>
+                <h4 class="invisible sign-title">O</h4>
+            </div>
         </div>
     </div>
 
-    <div id="line"></div>
+    <div id="line" class="hidden"></div>
 
 
     <script src="game.js"></script>
 </body>
+
 </html>
