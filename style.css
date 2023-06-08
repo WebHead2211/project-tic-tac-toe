@@ -2,6 +2,7 @@ body {
     text-align: center;
     background-color: rgb(156, 156, 156);
     font-family: 'Raleway', sans-serif;
+    padding: 0;
 }
 
 h1 {
@@ -53,7 +54,7 @@ h1 {
 
 .controls {
     width: 400px;
-    margin: 70px auto 0;
+    margin: 40px auto 0;
     gap: 20px;
     display: grid;
     grid-template-columns: 1fr;
@@ -152,7 +153,7 @@ h4.invisible {
     transition: transform 0s;
     transition: opacity 1s;
     width: 100vw;
-    background-color: rgba(20, 20, 20, 1);
+    background-color: rgba(20, 20, 20, 0.7);
     position: absolute;
     left: 0;
     top: 0;
@@ -161,6 +162,7 @@ h4.invisible {
 #result.active {
     opacity: 1;
     transform: translateY(505%);
+    backdrop-filter: blur(10px);
 }
 
 #line {
@@ -270,3 +272,29 @@ input:checked + .slider:before {
     margin: 0;
 }
 
+.footer {
+    background-color: rgb(59, 59, 59);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    margin: 0;
+    color: white;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
